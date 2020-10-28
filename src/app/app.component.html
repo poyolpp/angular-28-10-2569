@@ -1,0 +1,25 @@
+<hello name="{{ name }}"></hello>
+
+<input type="text" [(ngModel)]="newTodo"
+(keyup.enter)="addNewItem()">
+{{newTodo}}
+<ul>
+	<li *ngFor="let item of todos">
+		<input type="checkbox"
+    [checked]="item.completed"
+    (change)="item.completed = !item.completed"
+    >
+
+		{{ item.title | json }} (completed {{ item.completed }})
+	</li>
+</ul>
+
+<!-- <p>Like : {{ count }}</p>
+<button (click)="increment()">Like👍🏽</button>
+<!-- <p>UnLike : {{ count }}</p> -->
+<!-- <button (click)="decrement()">UnLike👎🏽</button>
+<br>
+<p *ngIf="count > 0">Like: {{ count }}</p>
+<br>
+<button (click)="increment()">Like👍🏽</button>
+<button (click)="decrement()">UnLike👎🏽</button> -->
